@@ -1,0 +1,3 @@
+CREATE OR REPLACE FUNCTION f_to_clob_agg(input VARCHAR2)
+RETURN CLOB AGGREGATE USING to_clob_agg_type;
+/
