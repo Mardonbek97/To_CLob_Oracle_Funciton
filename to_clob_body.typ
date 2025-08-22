@@ -13,7 +13,7 @@ CREATE OR REPLACE TYPE BODY to_clob_agg_type IS
       DBMS_LOB.CREATETEMPORARY(self.total, TRUE);
       DBMS_LOB.APPEND(self.total, value);
     ELSE
-      DBMS_LOB.APPEND(self.total, ',' || value); 
+      DBMS_LOB.APPEND(self.total, ',' || value);   --If you need a concatenate with enter you can pu chr(13) despit the ','
     END IF;
     RETURN ODCIConst.Success;
   END;
@@ -38,3 +38,4 @@ CREATE OR REPLACE TYPE BODY to_clob_agg_type IS
 
 END;
 /
+
